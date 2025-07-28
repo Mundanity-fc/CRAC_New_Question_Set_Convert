@@ -6,7 +6,7 @@ import json
 #######################
 #        总题库        #
 #######################
-#pdf转文字
+# PDF 转文字
 content = pymupdf4llm.to_markdown("总题库.pdf")
 # 删去页码
 result = re.sub(r'^\d$', '', content, flags=re.MULTILINE)
@@ -19,13 +19,13 @@ result = re.sub(r'\[J', '\n[J', result, flags=re.MULTILINE)
 # 删除开头的换行符
 result = result[2:].strip()
 # 保存
-pathlib.Path("总题库.md").write_bytes(result.encode())
+pathlib.Path("总题库.txt").write_bytes(result.encode())
 print("文字版总题库已保存")
 
 # 构建新的题库合集
 questions = []
 
-with open('总题库.md', 'r', encoding='utf-8') as file:
+with open('总题库.txt', 'r', encoding='utf-8') as file:
     for line in file:
         if line.startswith("["):
             # 新的问题
@@ -80,13 +80,13 @@ result = re.sub(r'\[J', '\n[J', result, flags=re.MULTILINE)
 # 删除开头的换行符
 result = result[2:].strip()
 # 保存
-pathlib.Path("A类题库.md").write_bytes(result.encode())
+pathlib.Path("A类题库.txt").write_bytes(result.encode())
 print("A类文字版题库已保存")
 
 # 构建新的题库合集
 questions = []
 
-with open('A类题库.md', 'r', encoding='utf-8') as file:
+with open('A类题库.txt', 'r', encoding='utf-8') as file:
     for line in file:
         if line.startswith("["):
             # 新的问题
@@ -141,13 +141,13 @@ result = re.sub(r'\[J', '\n[J', result, flags=re.MULTILINE)
 # 删除开头的换行符
 result = result[2:].strip()
 # 保存
-pathlib.Path("B类题库.md").write_bytes(result.encode())
+pathlib.Path("B类题库.txt").write_bytes(result.encode())
 print("B类文字版题库已保存")
 
 # 构建新的题库合集
 questions = []
 
-with open('B类题库.md', 'r', encoding='utf-8') as file:
+with open('B类题库.txt', 'r', encoding='utf-8') as file:
     for line in file:
         if line.startswith("["):
             # 新的问题
@@ -202,13 +202,13 @@ result = re.sub(r'\[J', '\n[J', result, flags=re.MULTILINE)
 # 删除开头的换行符
 result = result[2:].strip()
 # 保存
-pathlib.Path("C类题库.md").write_bytes(result.encode())
+pathlib.Path("C类题库.txt").write_bytes(result.encode())
 print("C类文字版题库已保存")
 
 # 构建新的题库合集
 questions = []
 
-with open('C类题库.md', 'r', encoding='utf-8') as file:
+with open('C类题库.txt', 'r', encoding='utf-8') as file:
     for line in file:
         if line.startswith("["):
             # 新的问题
